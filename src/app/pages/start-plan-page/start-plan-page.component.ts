@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanApiService } from 'src/app/services/plan-api.service';
 
 @Component({
   selector: 'app-start-plan',
@@ -8,11 +7,7 @@ import { PlanApiService } from 'src/app/services/plan-api.service';
 })
 export class StartPlanPageComponent implements OnInit {
 
-  constructor(private planApi: PlanApiService) { }
-
-  startPlan = () => {
-    this.planApi.startPlan();
-  }
+  constructor() { }
 
   ngOnInit() {
   }

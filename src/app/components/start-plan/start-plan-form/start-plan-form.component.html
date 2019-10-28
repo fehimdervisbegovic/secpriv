@@ -1,0 +1,55 @@
+<form [formGroup]="fg" novalidate>
+  
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+      <div class="row form-group">
+        <div class="col-lg-12" [ngClass]="displayFieldCss('name')">
+          <input formControlName="name" type="text" class="form-control" placeholder="Your Name*" required />
+          <app-validation-message [control]="fg.get('name')"></app-validation-message>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-lg-12" [ngClass]="displayFieldCss('email')">
+          <input formControlName="email" type="text" class="form-control" placeholder="Your Email*" required />
+          <app-validation-message [control]="fg.get('email')"></app-validation-message>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-lg-12" [ngClass]="displayFieldCss('company')">
+          <input formControlName="company" type="text" class="form-control" placeholder="Company Name*" required />
+          <app-validation-message [control]="fg.get('company')"></app-validation-message>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-lg-12">
+          <input formControlName="country" type="text" class="form-control" placeholder="Country" />
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-lg-12" [ngClass]="displayFieldCss('webSite')">
+          <input formControlName="webSite" type="text" class="form-control" placeholder="Website name*" required />
+          <app-validation-message [control]="fg.get('webSite')"></app-validation-message>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-lg-12">
+          <textarea formControlName="additionalWebSites" class="form-control" 
+            placeholder="Enter all your website URL (one URL per row)" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-lg-12">
+          <button type="button" (click)="startPlan()" class="btn btn-block green-button">Send</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</form>

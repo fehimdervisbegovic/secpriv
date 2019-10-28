@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', component: MainLayoutComponent, children: [
       {
         path: 'startplan',
-        loadChildren: () => import(`src/app/pages/start-plan-page/start-plan-page.module`).then(m => m.StartPlanPageModule)
+        loadChildren: () => import(`./pages/start-plan-page/start-plan-page.module`).then(m => m.StartPlanPageModule)
       }
     ]
   }
