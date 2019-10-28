@@ -38,7 +38,7 @@ export class StartPlanFormComponent implements OnInit {
   displayFieldCss(field: string) {
     return {
       'has-error': this.isFieldValid(field),
-      'has-feedback': this.isFieldValid(field)
+      // 'has-feedback': this.isFieldValid(field)
     };
   }
 
@@ -48,7 +48,7 @@ export class StartPlanFormComponent implements OnInit {
       email: ['', [Validators.required, ValidationService.emailValidator]],
       company: ['', [Validators.required, Validators.minLength(3)]],
       country: ['', []],
-      webSite: ['', [Validators.required]],
+      webSite: ['', [Validators.required, Validators.pattern(ValidationService.reg)]],
       additionalWebSites: ['', []],
     });
   }

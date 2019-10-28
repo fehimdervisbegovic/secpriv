@@ -1,55 +1,39 @@
 <form [formGroup]="fg" novalidate>
-  
   <div class="row">
     <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
-      <div class="row form-group">
-        <div class="col-lg-12" [ngClass]="displayFieldCss('name')">
+      <div class="form-group has-feedback" [ngClass]="displayFieldCss('name')">
           <input formControlName="name" type="text" class="form-control" placeholder="Your Name*" required />
+          <i class="glyphicon glyphicon-user form-control-feedback"></i>
           <app-validation-message [control]="fg.get('name')"></app-validation-message>
-        </div>
       </div>
 
-      <div class="row form-group">
-        <div class="col-lg-12" [ngClass]="displayFieldCss('email')">
+      <div class="form-group" [ngClass]="displayFieldCss('email')">
           <input formControlName="email" type="text" class="form-control" placeholder="Your Email*" required />
           <app-validation-message [control]="fg.get('email')"></app-validation-message>
-        </div>
       </div>
 
-      <div class="row form-group">
-        <div class="col-lg-12" [ngClass]="displayFieldCss('company')">
-          <input formControlName="company" type="text" class="form-control" placeholder="Company Name*" required />
-          <app-validation-message [control]="fg.get('company')"></app-validation-message>
-        </div>
+      <div class="form-group" [ngClass]="displayFieldCss('company')">
+        <input formControlName="company" type="text" class="form-control" placeholder="Company Name*" required />
+        <app-validation-message [control]="fg.get('company')"></app-validation-message>
       </div>
 
-      <div class="row form-group">
-        <div class="col-lg-12">
-          <input formControlName="country" type="text" class="form-control" placeholder="Country" />
-        </div>
+      <div class="form-group">
+        <input formControlName="country" type="text" class="form-control" placeholder="Country" />
       </div>
 
-      <div class="row form-group">
-        <div class="col-lg-12" [ngClass]="displayFieldCss('webSite')">
-          <input formControlName="webSite" type="text" class="form-control" placeholder="Website name*" required />
-          <app-validation-message [control]="fg.get('webSite')"></app-validation-message>
-        </div>
+      <div class="form-group" [ngClass]="displayFieldCss('webSite')">
+        <input formControlName="webSite" type="text" class="form-control" placeholder="Website name*" required />
+        <app-validation-message [control]="fg.get('webSite')"></app-validation-message>
       </div>
 
-      <div class="row form-group">
-        <div class="col-lg-12">
-          <textarea formControlName="additionalWebSites" class="form-control" 
+      <div class="form-group">
+        <textarea formControlName="additionalWebSites" class="form-control" 
             placeholder="Enter all your website URL (one URL per row)" rows="5"></textarea>
-        </div>
       </div>
 
-      <div class="row form-group">
-        <div class="col-lg-12">
+      <div class="form-group">
           <button type="button" (click)="startPlan()" class="btn btn-block green-button">Send</button>
-        </div>
       </div>
-
     </div>
-
   </div>
 </form>

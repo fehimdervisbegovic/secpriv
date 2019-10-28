@@ -5,6 +5,9 @@ import { FormGroup, FormControl } from '@angular/forms';
   providedIn: 'root'
 })
 export class ValidationService {
+
+    public static readonly reg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
+
     static getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
       const config = {
         required: 'Required',
@@ -12,7 +15,11 @@ export class ValidationService {
         minlength: `Minimum length ${validatorValue.requiredLength}`
       };
 
-      return config[validatorName];
+      let response = config[validatorName];
+      if (!response) {
+        response = 'Wrong data';
+      }
+      return response;
     }
 
     static validateAllFormFields(formGroup: FormGroup) {
