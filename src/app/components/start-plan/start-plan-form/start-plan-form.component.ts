@@ -69,11 +69,11 @@ export class StartPlanFormComponent implements OnInit, OnDestroy {
    */
   initialiseForm() {
     this.fg = this.fb.group({
-      name: ['Fehim', Validators.required],
-      email: ['fehimdervisbegovic@gmail.com', [Validators.required, ValidationService.emailValidator]],
-      company: ['Axis', [Validators.required, Validators.minLength(3)]],
+      name: ['', Validators.required],
+      email: ['', [Validators.required, ValidationService.emailValidator]],
+      company: ['', [Validators.required, Validators.minLength(3)]],
       country: ['', []],
-      webSite: ['https://axis-sg.com', [Validators.required, Validators.pattern(ValidationService.reg)]],
+      webSite: ['', [Validators.required, Validators.pattern(ValidationService.reg)]],
       additionalWebSites: ['', []],
     });
   }
