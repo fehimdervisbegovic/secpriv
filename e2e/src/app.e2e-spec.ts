@@ -1,16 +1,16 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, logging, element, by } from 'protractor';
 
-describe('workspace-project App', () => {
+describe('One very simple e2e test', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Contactor app is running!');
+  it('Send button must exists', async () => {
+    expect(await page.getSendButtonText()).toEqual('Send');
   });
 
   afterEach(async () => {
