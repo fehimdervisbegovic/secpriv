@@ -9,7 +9,7 @@ import { TopNavigationComponent } from './top-navigation/top-navigation.componen
   declarations: [ MainLayoutComponent, FooterComponent, TopNavigationComponent ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule.forChild([])
   ],
   exports: [
     MainLayoutComponent
